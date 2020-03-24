@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        $.getJSON("./中国.json", function (json) {
+            var newobj = {};
+            json.features.forEach(function (item) {
+                newobj[item.properties.name] = item.properties.center
+            })
+            console.log(JSON.stringify(newobj))
+        })
+    </script>
+</body>
+
+</html>
